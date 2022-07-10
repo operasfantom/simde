@@ -78,7 +78,7 @@ typedef union {
     SIMDE_ALIGN_TO_8 uint_fast32_t u32f[8 / sizeof(uint_fast32_t)];
   #endif
 
-  #if defined(SIMDE_X86_MMX_USE_NATIVE_TYPE)
+  #if defined(SIMDE_X86_MMX_USE_NATIVE_TYPE) || defined(SIMDE_KLEE_RUNTIME)
     __m64          n;
   #endif
   #if defined(SIMDE_ARM_NEON_A32V7_NATIVE)

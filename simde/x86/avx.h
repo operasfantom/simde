@@ -75,7 +75,7 @@ typedef union {
     SIMDE_ALIGN_TO_32 simde__m128_private m128_private[2];
     SIMDE_ALIGN_TO_32 simde__m128         m128[2];
 
-  #if defined(SIMDE_X86_AVX_NATIVE)
+  #if defined(SIMDE_X86_AVX_NATIVE) || defined(SIMDE_KLEE_RUNTIME)
     SIMDE_ALIGN_TO_32 __m256         n;
   #elif defined(SIMDE_POWER_ALTIVEC_P6_NATIVE)
     SIMDE_ALIGN_TO_16 SIMDE_POWER_ALTIVEC_VECTOR(unsigned char)      altivec_u8[2];
@@ -133,7 +133,7 @@ typedef union {
     SIMDE_ALIGN_TO_32 simde__m128d_private m128d_private[2];
     SIMDE_ALIGN_TO_32 simde__m128d         m128d[2];
 
-  #if defined(SIMDE_X86_AVX_NATIVE)
+  #if defined(SIMDE_X86_AVX_NATIVE) || defined(SIMDE_KLEE_RUNTIME)
     SIMDE_ALIGN_TO_32 __m256d        n;
   #elif defined(SIMDE_POWER_ALTIVEC_P6_NATIVE)
     SIMDE_ALIGN_TO_16 SIMDE_POWER_ALTIVEC_VECTOR(unsigned char)      altivec_u8[2];
@@ -191,7 +191,7 @@ typedef union {
     SIMDE_ALIGN_TO_32 simde__m128i_private m128i_private[2];
     SIMDE_ALIGN_TO_32 simde__m128i         m128i[2];
 
-  #if defined(SIMDE_X86_AVX_NATIVE)
+  #if defined(SIMDE_X86_AVX_NATIVE) || defined(SIMDE_KLEE_RUNTIME)
     SIMDE_ALIGN_TO_32 __m256i        n;
   #elif defined(SIMDE_POWER_ALTIVEC_P6_NATIVE)
     SIMDE_ALIGN_TO_16 SIMDE_POWER_ALTIVEC_VECTOR(unsigned char)      altivec_u8[2];

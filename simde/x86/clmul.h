@@ -99,7 +99,7 @@ simde_x_bitreverse_u64(uint64_t v) {
     #endif
 
     return HEDLEY_STATIC_CAST(uint64_t, _mm_cvtsi128_si64(vec));
-  #elif HEDLEY_HAS_BUILTIN(__builtin_bitreverse64)
+  #elif HEDLEY_HAS_BUILTIN(__builtin_bitreverse64) && !defined(SIMDE_KLEE_RUNTIME)
     return __builtin_bitreverse64(v);
   #else
     v = ((v >>  1) & UINT64_C(0x5555555555555555)) | ((v & UINT64_C(0x5555555555555555)) <<  1);
@@ -262,7 +262,7 @@ simde_mm256_clmulepi64_epi128 (simde__m256i a, simde__m256i b, const int imm8)
   #else
     simde__m128i_private a_lo_, b_lo_, r_lo_, a_hi_, b_hi_, r_hi_;
 
-    #if HEDLEY_HAS_BUILTIN(__builtin_shufflevector) && !defined(HEDLEY_IBM_VERSION)
+    #if HEDLEY_HAS_BUILTIN(__builtin_shufflevector) && !defined(HEDLEY_IBM_VERSION) && !defined(SIMDE_KLEE_RUNTIME)
       switch (imm8 & 0x01) {
         case 0x00:
           a_lo_.u64 = __builtin_shufflevector(a_.u64, a_.u64, 0, 2);
@@ -297,7 +297,7 @@ simde_mm256_clmulepi64_epi128 (simde__m256i a, simde__m256i b, const int imm8)
       r_hi_.u64[i] = simde_x_bitreverse_u64(r_hi_.u64[i]) >> 1;
     }
 
-    #if HEDLEY_HAS_BUILTIN(__builtin_shufflevector) && !defined(HEDLEY_IBM_VERSION)
+    #if HEDLEY_HAS_BUILTIN(__builtin_shufflevector) && !defined(HEDLEY_IBM_VERSION) && !defined(SIMDE_KLEE_RUNTIME)
       r_.u64 = __builtin_shufflevector(r_lo_.u64, r_hi_.u64, 0, 2, 1, 3);
     #elif defined(SIMDE_SHUFFLE_VECTOR_)
       r_ = simde__m256i_to_private(simde_mm256_set_m128i(simde__m128i_from_private(r_hi_), simde__m128i_from_private(r_lo_)));
@@ -354,7 +354,7 @@ simde_mm512_clmulepi64_epi128 (simde__m512i a, simde__m512i b, const int imm8)
   #else
     simde__m256i_private a_lo_, b_lo_, r_lo_, a_hi_, b_hi_, r_hi_;
 
-    #if HEDLEY_HAS_BUILTIN(__builtin_shufflevector) && !defined(HEDLEY_IBM_VERSION)
+    #if HEDLEY_HAS_BUILTIN(__builtin_shufflevector) && !defined(HEDLEY_IBM_VERSION) && !defined(SIMDE_KLEE_RUNTIME)
       switch (imm8 & 0x01) {
         case 0x00:
           a_lo_.u64 = __builtin_shufflevector(a_.u64, a_.u64, 0, 2, 4, 6);
@@ -393,7 +393,7 @@ simde_mm512_clmulepi64_epi128 (simde__m512i a, simde__m512i b, const int imm8)
       r_hi_.u64[i] = simde_x_bitreverse_u64(r_hi_.u64[i]) >> 1;
     }
 
-    #if HEDLEY_HAS_BUILTIN(__builtin_shufflevector) && !defined(HEDLEY_IBM_VERSION)
+    #if HEDLEY_HAS_BUILTIN(__builtin_shufflevector) && !defined(HEDLEY_IBM_VERSION) && !defined(SIMDE_KLEE_RUNTIME)
       r_.u64 = __builtin_shufflevector(r_lo_.u64, r_hi_.u64, 0, 4, 1, 5, 2, 6, 3, 7);
     #else
       r_.u64[0] = r_lo_.u64[0];

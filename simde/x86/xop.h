@@ -3520,7 +3520,7 @@ simde_mm_perm_epi8 (simde__m128i a, simde__m128i b, simde__m128i c) {
 
       switch (c_.u8[i] & 0xc0) {
         case 0x40:
-          #if HEDLEY_HAS_BUILTIN(__builtin_bitreverse8) && !defined(HEDLEY_IBM_VERSION)
+          #if HEDLEY_HAS_BUILTIN(__builtin_bitreverse8) && !defined(HEDLEY_IBM_VERSION) && !defined(SIMDE_KLEE_RUNTIME)
             src = HEDLEY_STATIC_CAST(int8_t, __builtin_bitreverse8(HEDLEY_STATIC_CAST(uint8_t, src)));
           #else
             src = HEDLEY_STATIC_CAST(int8_t, ((HEDLEY_STATIC_CAST(uint8_t, src) * UINT64_C(0x80200802)) & UINT64_C(0x0884422110)) * UINT64_C(0x0101010101) >> 32);

@@ -82,7 +82,7 @@ typedef union {
     SIMDE_ALIGN_TO_16 simde__m64_private m64_private[2];
     SIMDE_ALIGN_TO_16 simde__m64         m64[2];
 
-  #if defined(SIMDE_X86_SSE_NATIVE)
+  #if defined(SIMDE_X86_SSE_NATIVE) || defined(SIMDE_KLEE_RUNTIME)
     SIMDE_ALIGN_TO_16 __m128         n;
   #elif defined(SIMDE_ARM_NEON_A32V7_NATIVE)
     SIMDE_ALIGN_TO_16 int8x16_t      neon_i8;

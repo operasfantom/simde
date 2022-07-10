@@ -80,7 +80,7 @@ typedef union {
     SIMDE_ALIGN_TO_16 simde__m64_private m64_private[2];
     SIMDE_ALIGN_TO_16 simde__m64         m64[2];
 
-  #if defined(SIMDE_X86_SSE2_NATIVE)
+  #if defined(SIMDE_X86_SSE2_NATIVE) || defined(SIMDE_KLEE_RUNTIME)
     SIMDE_ALIGN_TO_16 __m128i        n;
   #elif defined(SIMDE_ARM_NEON_A32V7_NATIVE)
     SIMDE_ALIGN_TO_16 int8x16_t      neon_i8;
@@ -167,7 +167,7 @@ typedef union {
     SIMDE_ALIGN_TO_16 simde__m64_private m64_private[2];
     SIMDE_ALIGN_TO_16 simde__m64         m64[2];
 
-  #if defined(SIMDE_X86_SSE2_NATIVE)
+  #if defined(SIMDE_X86_SSE2_NATIVE) || defined(SIMDE_KLEE_RUNTIME)
     SIMDE_ALIGN_TO_16 __m128d        n;
   #elif defined(SIMDE_ARM_NEON_A32V7_NATIVE)
     SIMDE_ALIGN_TO_16 int8x16_t      neon_i8;
@@ -2648,7 +2648,7 @@ simde_mm_cvtpd_ps (simde__m128d a) {
       r_.altivec_f32 = vec_float2(a_.altivec_f64, vec_splats(0.0));
     #elif defined(SIMDE_WASM_SIMD128_NATIVE)
       r_.wasm_v128 = wasm_f32x4_demote_f64x2_zero(a_.wasm_v128);
-    #elif HEDLEY_HAS_BUILTIN(__builtin_shufflevector) && HEDLEY_HAS_BUILTIN(__builtin_convertvector)
+    #elif HEDLEY_HAS_BUILTIN(__builtin_shufflevector) && HEDLEY_HAS_BUILTIN(__builtin_convertvector) && 0
       float __attribute__((__vector_size__(8))) z = { 0.0f, 0.0f };
       r_.f32 =
         __builtin_shufflevector(
