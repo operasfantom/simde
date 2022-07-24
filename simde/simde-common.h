@@ -360,7 +360,7 @@
 #  define SIMDE_VECTORIZE_SAFELEN(l) HEDLEY_PRAGMA(simd vectorlength(l))
 #  define SIMDE_VECTORIZE_REDUCTION(r) HEDLEY_PRAGMA(simd reduction(r))
 #  define SIMDE_VECTORIZE_ALIGNED(a) HEDLEY_PRAGMA(simd aligned(a))
-#elif defined(__clang__) && !defined(HEDLEY_IBM_VERSION)
+#elif defined(__clang__) && !defined(HEDLEY_IBM_VERSION) && !defined(SIMDE_KLEE_RUNTIME) && !defined(SIMDE_KLEE_TEST)
 #  define SIMDE_VECTORIZE HEDLEY_PRAGMA(clang loop vectorize(enable))
 #  define SIMDE_VECTORIZE_SAFELEN(l) HEDLEY_PRAGMA(clang loop vectorize_width(l))
 #  define SIMDE_VECTORIZE_REDUCTION(r) SIMDE_VECTORIZE
