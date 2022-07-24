@@ -3471,9 +3471,9 @@ SIMDE_TEST_FUNC_LIST_BEGIN
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_blend_ps)
 
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_blendv_epi8)
-//  SIMDE_TEST_FUNC_LIST_ENTRY(x_mm_blendv_epi16)
-//  SIMDE_TEST_FUNC_LIST_ENTRY(x_mm_blendv_epi32)
-//  SIMDE_TEST_FUNC_LIST_ENTRY(x_mm_blendv_epi64)
+  SIMDE_TEST_FUNC_LIST_ENTRY(x_mm_blendv_epi16)
+  SIMDE_TEST_FUNC_LIST_ENTRY(x_mm_blendv_epi32)
+  SIMDE_TEST_FUNC_LIST_ENTRY(x_mm_blendv_epi64)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_blendv_pd)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_blendv_ps)
 
