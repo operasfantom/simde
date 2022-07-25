@@ -7378,39 +7378,39 @@ test_simde_mm512_maskz_gf2p8mul_epi8(SIMDE_MUNIT_TEST_ARGS) {
 SIMDE_TEST_FUNC_LIST_BEGIN
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_gf2p8affine_epi64_epi8)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm256_gf2p8affine_epi64_epi8)
-  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_gf2p8affine_epi64_epi8)
+//  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_gf2p8affine_epi64_epi8)
 
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_mask_gf2p8affine_epi64_epi8)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm256_mask_gf2p8affine_epi64_epi8)
-  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_mask_gf2p8affine_epi64_epi8)
+//  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_mask_gf2p8affine_epi64_epi8)
 
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_maskz_gf2p8affine_epi64_epi8)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm256_maskz_gf2p8affine_epi64_epi8)
-  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_maskz_gf2p8affine_epi64_epi8)
+//  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_maskz_gf2p8affine_epi64_epi8)
 
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_gf2p8affineinv_epi64_epi8)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm256_gf2p8affineinv_epi64_epi8)
-  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_gf2p8affineinv_epi64_epi8)
+//  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_gf2p8affineinv_epi64_epi8)
 
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_mask_gf2p8affineinv_epi64_epi8)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm256_mask_gf2p8affineinv_epi64_epi8)
-  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_mask_gf2p8affineinv_epi64_epi8)
+//  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_mask_gf2p8affineinv_epi64_epi8)
 
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_maskz_gf2p8affineinv_epi64_epi8)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm256_maskz_gf2p8affineinv_epi64_epi8)
-  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_maskz_gf2p8affineinv_epi64_epi8)
+//  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_maskz_gf2p8affineinv_epi64_epi8)
 
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_gf2p8mul_epi8)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm256_gf2p8mul_epi8)
-  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_gf2p8mul_epi8)
+//  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_gf2p8mul_epi8)
 
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_mask_gf2p8mul_epi8)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm256_mask_gf2p8mul_epi8)
-  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_mask_gf2p8mul_epi8)
+//  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_mask_gf2p8mul_epi8)
 
   SIMDE_TEST_FUNC_LIST_ENTRY(mm_maskz_gf2p8mul_epi8)
   SIMDE_TEST_FUNC_LIST_ENTRY(mm256_maskz_gf2p8mul_epi8)
-  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_maskz_gf2p8mul_epi8)
+//  SIMDE_TEST_FUNC_LIST_ENTRY(mm512_maskz_gf2p8mul_epi8)
 SIMDE_TEST_FUNC_LIST_END
 
 #include <test/x86/test-x86-footer.h>
