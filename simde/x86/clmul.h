@@ -242,20 +242,20 @@ simde_mm256_clmulepi64_epi128 (simde__m256i a, simde__m256i b, const int imm8)
     SIMDE_LCC_DISABLE_DEPRECATED_WARNINGS
     switch (imm8 & 0x11) {
       case 0x00:
-        r_.m128i[0] = _mm_clmulepi64_si128(a_.m128i[0], b_.m128i[0], 0x00);
-        r_.m128i[1] = _mm_clmulepi64_si128(a_.m128i[1], b_.m128i[1], 0x00);
+        r_.m128i[0] = simde_mm_clmulepi64_si128(a_.m128i[0], b_.m128i[0], 0x00);
+        r_.m128i[1] = simde_mm_clmulepi64_si128(a_.m128i[1], b_.m128i[1], 0x00);
         break;
       case 0x01:
-        r_.m128i[0] = _mm_clmulepi64_si128(a_.m128i[0], b_.m128i[0], 0x01);
-        r_.m128i[1] = _mm_clmulepi64_si128(a_.m128i[1], b_.m128i[1], 0x01);
+        r_.m128i[0] = simde_mm_clmulepi64_si128(a_.m128i[0], b_.m128i[0], 0x01);
+        r_.m128i[1] = simde_mm_clmulepi64_si128(a_.m128i[1], b_.m128i[1], 0x01);
         break;
       case 0x10:
-        r_.m128i[0] = _mm_clmulepi64_si128(a_.m128i[0], b_.m128i[0], 0x10);
-        r_.m128i[1] = _mm_clmulepi64_si128(a_.m128i[1], b_.m128i[1], 0x10);
+        r_.m128i[0] = simde_mm_clmulepi64_si128(a_.m128i[0], b_.m128i[0], 0x10);
+        r_.m128i[1] = simde_mm_clmulepi64_si128(a_.m128i[1], b_.m128i[1], 0x10);
         break;
       case 0x11:
-        r_.m128i[0] = _mm_clmulepi64_si128(a_.m128i[0], b_.m128i[0], 0x11);
-        r_.m128i[1] = _mm_clmulepi64_si128(a_.m128i[1], b_.m128i[1], 0x11);
+        r_.m128i[0] = simde_mm_clmulepi64_si128(a_.m128i[0], b_.m128i[0], 0x11);
+        r_.m128i[1] = simde_mm_clmulepi64_si128(a_.m128i[1], b_.m128i[1], 0x11);
         break;
     }
     SIMDE_LCC_REVERT_DEPRECATED_WARNINGS
